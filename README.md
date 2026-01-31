@@ -1,4 +1,4 @@
-# restful_api_framework
+# Restful API Framework
 
 A small Python test suite and framework for exercising the Restful-Booker API (https://restful-booker.herokuapp.com).  
 This repository contains integration-style pytest tests that exercise the main endpoints (ping, auth, create/list/get/update/patch/delete bookings). Tests are intended to run against the public demo service but can be adapted to use mocks for offline testing or CI.
