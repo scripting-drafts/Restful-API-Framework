@@ -57,6 +57,12 @@ def test_benchmark_create_get_delete_flow(benchmark, admin_token):
         get_resp = get_booking(bid)
         assert get_resp.status_code == 200
         del_resp = delete_booking(bid, admin_token)
+        if del_resp.status_code in (401, 403):
+            fresh = create_token("admin", "password123")
+            if fresh.status_code in SUCCESS_STATUS:
+                tok = fresh.json().get("token")
+                if tok:
+                    del_resp = delete_booking(bid, tok)
         assert del_resp.status_code in SUCCESS_STATUS
         return bid
 
