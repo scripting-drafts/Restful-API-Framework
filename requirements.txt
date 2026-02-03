@@ -1,3 +1,7 @@
 pytest
 requests
 pytest-html
+jsonschema>=4.0.0
+pytest-benchmark
+locust
+urllib3==1.25.11
